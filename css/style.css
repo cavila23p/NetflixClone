@@ -1,0 +1,288 @@
+:root {  
+  --primary-color:  #fff;
+  --secondary-color:#686868;
+  --background-color-1: #141414; 
+  
+  --text-light-color: #fff;
+  --text-dark-color: #686868;
+  --text-link-color: #c2c1bb;
+
+  --btn-primary-color-1: #992A07;
+  --btn-hover-color-1:  #e43c09;
+  --btn-hover-color-2: #e0e70e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-light-color);
+  background-color: var(--background-color-1);
+}
+
+ul {
+  list-style: none;
+}
+
+li, a {
+  text-decoration: none;
+  color: var(--text-light-color);
+  font-size: 20px; 
+}
+
+li, a:hover{
+  transition: all .25s;
+  color: var(--secondary-color);
+}
+
+img {
+  width: 100%;  
+}
+
+/**********
+ * NAVBAR *
+ **********/
+ .navbar {  
+  text-align: center;
+  position: sticky; 
+  top: 0;
+  z-index: 100; 
+  background: var(--background-color-1);
+}
+
+.navbar .flex {
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.navbar .logo {
+  width: 150px;
+}
+
+.navbar .hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.navbar li a {
+  font-size: 16px;
+}
+
+.navbar .nav-ul-1 {
+  padding: 20px 30px;
+}
+
+.navbar .nav-ul-1 li {
+  padding: 20px;
+}
+
+.navbar .nav-ul-2 {
+  margin-left: auto;
+}
+
+.navbar .nav-ul-2 li {
+  padding: 20px 10px;
+}
+
+/**********
+ * MOVIES *
+ **********/
+.movies {
+  scroll-margin-top: 7em;
+}
+
+.movies .swiper-container {
+  width: 100%;
+  height: 200px;
+}
+
+.movies .swiper-slide {
+  text-align: center;
+  font-size: 18px;    
+  
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  transition: 250ms all;
+}
+
+.movies .swiper-slide:hover {
+  transform: scale(1.2);
+}
+
+.movies img {
+  -webkit-box-shadow: 0px 0px 16px 3px #000000; 
+  box-shadow: 0px 0px 16px 3px #000000;
+}
+
+.movies .swiper-button-white {
+  color: #9c3036;
+  font-weight: bold;
+}
+
+
+/****************
+ * SOCIAL MEDIA *
+ ****************/
+.social-media a {
+  padding: 20px;
+  color: var(--text-dark-color);
+}
+
+.social-media a:hover {
+  color: var(--text-light-color);
+}
+
+/*********
+ * LINKS *
+ *********/
+.links .grid {
+  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);  
+}
+
+.links li {
+  padding: 10px;
+}
+
+.links a {
+  font-size: 16px;
+  color: var(--text-dark-color);
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/**********
+ * FOOTER *
+ **********/
+ .footer {
+   text-align: center;
+ }
+.footer p {
+  font-size: 16px;
+  color: var(--text-dark-color);
+}
+
+/**********
+ * LAPTOP *
+ **********/
+@media only screen and (max-width: 1110px){
+  .navbar .nav-ul-1 li {
+    padding: 20px 10px;
+  }
+
+  .movies {    
+    scroll-margin-top: 19em;
+  }
+
+  .movies .carousel-container {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    align-items: center;  
+    overflow: hidden;
+    scroll-behavior: smooth;
+  }
+
+  .movies .section {
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+  }
+
+  .movies .extra {
+    display: block;
+  }
+
+  .movies .btn {
+    display: none;   
+  }
+}
+
+/**********
+ * NAVBAR *
+ **********/
+@media only screen and (max-width: 1180px){
+  .navbar .flex {
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .navbar .hamburger {
+    margin-left: auto;
+    display: block
+  }
+
+  .navbar .nav-ul-1,
+  .navbar .nav-ul-2 {   
+    padding: 0;
+    display: none;
+  }
+
+  .navbar .nav-ul-1.show,
+  .navbar .nav-ul-2.show {
+    display: block;
+    display: flex;
+    justify-content: center;
+  } 
+}
+
+/**********
+ * TABLET *
+ **********/
+@media only screen and (max-width: 860px){
+  .movies .section {
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+  }
+}
+
+/**********
+ * MOBILE *
+ **********/
+@media only screen and (max-width: 660px){
+  .navbar .nav-ul-1,
+  .navbar .nav-ul-2 {
+    flex-direction: column;
+    display: none;
+  }
+
+  .movies {
+    text-align: center;
+    scroll-margin-top: 44em;
+  }
+
+  .movies .section {
+    gap: 50px;
+    grid-template-columns: repeat(1, minmax(250px, 1fr));    
+  }
+
+  .movies img {
+    max-width: 300px;
+  }
+
+  .social-media .flex {
+    flex-direction: column;
+  }
+
+  .links {
+    text-align: center;
+  }
+
+  .links .grid {
+    grid-template-columns: 1fr;
+  }
+
+}
